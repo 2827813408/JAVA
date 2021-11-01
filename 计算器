@@ -1,0 +1,102 @@
+import java.util.Scanner;
+
+class calculator
+{
+    private int num1;
+
+    private int num2;
+
+    public int getNum1() {
+        return num1;
+    }
+
+    public void setNum1(int num1) {
+        this.num1 = num1;
+    }
+
+    public int getNum2() {
+        return num2;
+    }
+
+    public void setNum2(int num2) {
+        this.num2 = num2;
+    }
+
+
+
+    public  int add()
+    {
+return num1+num2;
+    }
+    public  int sub()
+    {
+        return num1-num2;
+    }
+    public  int rid()
+    {
+        return num1*num2;
+    }
+    public double dev()
+    {
+        return num1*1.0/num2;
+    }
+}
+public class mytest
+{
+    public static void main(String[] args)
+    {
+        calculator calculator=new calculator();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("请输入整数:");
+        int num1=scanner.nextInt();
+        System.out.print("请输入整数:");
+        int num2=scanner.nextInt();
+        System.out.println("请输入需要使用 加 减 乘 除 算法");
+        System.out.print("        1.加法"+"\n");
+        System.out.print("        2.减法"+"\n");
+        System.out.print("        3.乘法"+"\n");
+        System.out.print("        4.除法"+"\n");
+
+
+    System.out.printf("请选择：");
+
+        int set = scanner.nextInt();
+
+        calculator.setNum1(num1);
+
+        calculator.setNum2(num2);
+        switch (set)
+       {
+           case 1:
+           {
+               System.out.println(num1+"+"+num2+"="+calculator.add());
+               break;
+           }
+           case 2:
+           {
+               System.out.println(num1+"-"+num2+"="+calculator.sub());
+               break;
+           }
+           case 3:
+           {
+               System.out.println(num1+"*"+num2+"="+calculator.rid());
+               break;
+           }
+           case 4:
+           {
+               System.out.println(num1+"/"+num2+"="+calculator.dev());
+               break;
+           }
+           default:
+               break;
+       }
+        System.out.println("计算结束");
+scanner.close();
+
+
+
+
+}
+
+}
